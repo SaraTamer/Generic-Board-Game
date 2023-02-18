@@ -2,7 +2,7 @@ import java.util.Arrays;
 public class Board
 {
     private int dimension;
-    private char board[][];
+    private char[][] board;
     private int countMoves;
 
     Board(int dim)
@@ -10,7 +10,11 @@ public class Board
         this.dimension = dim;
         board = new char[dimension][dimension];
         countMoves = 0;
-        //Arrays.fill(board,'-');
+        for (char[] row : board)
+        {
+            Arrays.fill(row,'-');
+        }
+        
     }
     public void displayBoard()
     {
@@ -18,8 +22,9 @@ public class Board
         {
             for(int j = 0; j < dimension; j++)
             {
-                System.out.print(board[i][j]);
+                System.out.print(board[i][j] + (" "));
             }
+            System.out.println('\n');
         }
     }
 
