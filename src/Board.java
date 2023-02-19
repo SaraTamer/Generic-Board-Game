@@ -45,6 +45,13 @@ abstract class Board
 
     public abstract boolean isWinner();
 
-    public abstract boolean isDraw();
+    public boolean isDraw()
+    {
+        if (countMoves == (dimension * dimension))
+        {
+            return true;
+        }
+        return false;
+    }
 
 }
